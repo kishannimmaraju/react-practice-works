@@ -1,4 +1,4 @@
 # React Practice Works
 
 These are my practices in React
-This project createing for practise.
+This project createing for practise
