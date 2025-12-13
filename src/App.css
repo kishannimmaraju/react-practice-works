@@ -1,6 +1,38 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+.logo {
+  height: 80px;
+}
+.nav-items ul {
+  display: flex;
+}
+.nav-items ul li {
+  padding: 15px;
+  list-style: none;
+}
+.res-card {
+  --items: 4;
+  --gap: 4px;
+  --gap-excluded: calc((var(--items) - 1) * 4px);
+  width: calc(100% / var(--items) - var(--gap-excluded) / var(--items));
+  border: 1px solid black;
+  padding: 5px 5px;
+}
+.res-card-img {
+  width: 100%;
+}
+.res-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  /* justify-content: space-between; */
 }

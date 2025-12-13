@@ -3,35 +3,291 @@ import "./App.css";
 function App() {
   return (
     <>
-      <h1>Hello</h1>
-      <h1>Hello</h1>
-      <h1>Hello</h1>
-      <h1>Hello</h1>
-      <h1>Hello</h1>
-      <h1>Hello</h1>
-      <h1>Kishan Nimmaraju..........</h1>
-      {heading}
-      <HeadingComponent />
+      <AppLayout />
     </>
   );
 }
 
-// React Element
-const heading = <h1>Hello React using JSX</h1>;
-
-//React Functional Component
-const number = 1000;
-export const HeadingComponent = () => {
+const Header = () => {
   return (
-    <>
-      {100 + 100}
-      {number}
-      <h1>It's the React functional component</h1>
-      <Title />
-    </>
+    <div className="header">
+      <div className="logo-container">
+        <img
+          className="logo"
+          src="https://img.freepik.com/free-vector/food-shopping-logo-template-design_460848-10299.jpg"
+          alt=""
+        />
+      </div>
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+    </div>
   );
 };
 
-const Title = () => <h1>Hello digital india</h1>;
+const resList = [
+  {
+    restaurantID: 26,
+    restaurantName: "1135 AD",
+    address: "Jaipur, Amber Fort, Rajasthan",
+    type: "Rajasthani",
+    parkingLot: true,
+  },
+  {
+    restaurantID: 25,
+    restaurantName: "6 Ballygunge Place",
+    address: "Kolkata, Ballygunge, West Bengal",
+    type: "Bengali Cuisine",
+    parkingLot: true,
+  },
+  {
+    restaurantID: 29,
+    restaurantName: "Agashiye",
+    address: "Ahmedabad, House of MG, Gujarat",
+    type: "Gujarati",
+    parkingLot: true,
+  },
+  {
+    restaurantID: 9,
+    restaurantName: "Alhamdulillah Hotel",
+    address: "Hyderabad, Sultan Shahi, Telangana",
+    type: "Mughlai",
+    parkingLot: false,
+  },
+  {
+    restaurantID: 4,
+    restaurantName: "Bawarchi",
+    address: "Hyderabad, RTC Cross Road, Telangana",
+    type: "Biryani",
+    parkingLot: true,
+  },
+  {
+    restaurantID: 22,
+    restaurantName: "Benjarong",
+    address: "Chennai, Alwarpet, Tamil Nadu",
+    type: "Thai",
+    parkingLot: true,
+  },
+  {
+    restaurantID: 16,
+    restaurantName: "Britannia & Co.",
+    address: "Mumbai, Ballard, Maharashtra",
+    type: "Parsi Cuisine",
+    parkingLot: false,
+  },
+  {
+    restaurantID: 11,
+    restaurantName: "Bukhara",
+    address: "Delhi, Chanakyapuri, Delhi",
+    type: "North Indian",
+    parkingLot: true,
+  },
+  {
+    restaurantID: 20,
+    restaurantName: "Dakshin",
+    address: "Chennai, ITC Grand Chola, Tamil Nadu",
+    type: "South Indian",
+    parkingLot: true,
+  },
+  {
+    restaurantID: 31,
+    restaurantName: "Gopi Dining Hall",
+    address: "Ahmedabad, Ashram Road, Gujarat",
+    type: "Gujarati Thali",
+    parkingLot: false,
+  },
+  {
+    restaurantID: 10,
+    restaurantName: "Grand Hotel",
+    address: "Hyderabad, Abids, Telangana",
+    type: "Multi-cuisine",
+    parkingLot: true,
+  },
+  {
+    restaurantID: 12,
+    restaurantName: "Indian Accent",
+    address: "Delhi, Lodhi, Delhi",
+    type: "Modern Indian",
+    parkingLot: true,
+  },
+  {
+    restaurantID: 2,
+    restaurantName: "Jewel of Nizam",
+    address: "Hyderabad, Golkonda, Telangana",
+    type: "Hyderabadi Cuisine",
+    parkingLot: true,
+  },
+  {
+    restaurantID: 13,
+    restaurantName: "Karim’s",
+    address: "Delhi, Jama Masjid, Delhi",
+    type: "Mughlai",
+    parkingLot: false,
+  },
+  {
+    restaurantID: 18,
+    restaurantName: "Koshy’s",
+    address: "Bangalore, St. Marks, Karnataka",
+    type: "Indian Cafe",
+    parkingLot: true,
+  },
+  {
+    restaurantID: 15,
+    restaurantName: "Masala Library",
+    address: "Mumbai, Bandra, Maharashtra",
+    type: "Modern Indian",
+    parkingLot: true,
+  },
+  {
+    restaurantID: 17,
+    restaurantName: "Mavalli Tiffin Room (MTR)",
+    address: "Bangalore, Lal Bagh, Karnataka",
+    type: "South Indian",
+    parkingLot: false,
+  },
+  {
+    restaurantID: 6,
+    restaurantName: "Mumtaz Restaurant",
+    address: "Hyderabad, Mallepally, Telangana",
+    type: "Hyderabadi Cuisine",
+    parkingLot: true,
+  },
+  {
+    restaurantID: 21,
+    restaurantName: "Murugan Idli Shop",
+    address: "Chennai, T. Nagar, Tamil Nadu",
+    type: "South Indian",
+    parkingLot: false,
+  },
+  {
+    restaurantID: 23,
+    restaurantName: "Oh! Calcutta",
+    address: "Kolkata, Elgin, West Bengal",
+    type: "Bengali Cuisine",
+    parkingLot: true,
+  },
+  {
+    restaurantID: 1,
+    restaurantName: "Paradise Biryani",
+    address: "Hyderabad, Secunderabad, Telangana",
+    type: "Biryani",
+    parkingLot: true,
+  },
+  {
+    restaurantID: 28,
+    restaurantName: "Peacock Rooftop Restaurant",
+    address: "Jaipur, C Scheme, Rajasthan",
+    type: "Multi-cuisine",
+    parkingLot: true,
+  },
+  {
+    restaurantID: 24,
+    restaurantName: "Peter Cat",
+    address: "Kolkata, Park Street, West Bengal",
+    type: "Continental",
+    parkingLot: false,
+  },
+  {
+    restaurantID: 5,
+    restaurantName: "Pista House",
+    address: "Hyderabad, Charminar, Telangana",
+    type: "Biryani",
+    parkingLot: false,
+  },
+  {
+    restaurantID: 30,
+    restaurantName: "Rajwadu",
+    address: "Ahmedabad, Vejalpur, Gujarat",
+    type: "Gujarati",
+    parkingLot: true,
+  },
+  {
+    restaurantID: 27,
+    restaurantName: "Rawat Mishtan Bhandar",
+    address: "Jaipur, Station Road, Rajasthan",
+    type: "Rajasthani",
+    parkingLot: false,
+  },
+  {
+    restaurantID: 8,
+    restaurantName: "Sarvi Restaurant",
+    address: "Hyderabad, Shah Ali Banda, Telangana",
+    type: "Mughlai",
+    parkingLot: false,
+  },
+  {
+    restaurantID: 3,
+    restaurantName: "Shah Ghouse",
+    address: "Hyderabad, Tolichowki, Telangana",
+    type: "Biryani",
+    parkingLot: false,
+  },
+  {
+    restaurantID: 7,
+    restaurantName: "The Fisherman’s Wharf",
+    address: "Hyderabad, Necklace Road, Telangana",
+    type: "Seafood",
+    parkingLot: true,
+  },
+  {
+    restaurantID: 14,
+    restaurantName: "The Table",
+    address: "Mumbai, Colaba, Maharashtra",
+    type: "Fine Dining",
+    parkingLot: true,
+  },
+  {
+    restaurantID: 19,
+    restaurantName: "Toit Brewery",
+    address: "Bangalore, Indiranagar, Karnataka",
+    type: "Brewery",
+    parkingLot: true,
+  },
+];
+
+const RestaurantCard = (props) => {
+  const { resData } = props;
+  return (
+    <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
+      <img
+        className="res-card-img"
+        src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/klwyzl8jyozrkxe9tjl7"
+        alt=""
+      />
+      <h3>{resData.restaurantName}</h3>
+      <h4>{resData.type}</h4>
+      <h5>{resData.address}</h5>
+    </div>
+  );
+};
+
+const Body = () => {
+  return (
+    <div className="body">
+      <div className="search">
+        <p>Search bar</p>
+      </div>
+      <div className="res-container">
+        {resList.map((restaurant) => (
+          <RestaurantCard resData={restaurant} key={restaurant.restaurantID} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const AppLayout = () => {
+  return (
+    <>
+      <Header />
+      <Body />
+    </>
+  );
+};
 
 export default App;
